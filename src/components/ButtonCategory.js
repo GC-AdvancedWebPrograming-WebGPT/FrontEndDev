@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 const StyledButtonCategory = styled.button`
     position: relative;
@@ -13,14 +14,24 @@ const StyledButtonCategory = styled.button`
     border-radius: 20px;
 `;
 
-function ButtonCategory ({categoryLogo, categoryName, isClicked, targetLink}) {
-    var bgColor = "#A7D9FF";
-    if (isClicked === "1") bgColor = "#4F7FDB";
+const Img = styled.img`
+    position: absolute;
+    left: 31%;
+    right: 30%;
+    top: 20%;
+    bottom: 20%;
+`
+
+function ButtonCategory ({toLink, imgSrc, bgColor}) {
+    //bgColor = "#A7D9FF";
+    //bgColor = "#4F7FDB";
 
     return (
-        <StyledButtonCategory background={bgColor} href="/">
-            <img src={categoryLogo} alt={categoryName} />
-        </StyledButtonCategory>
+        <Link to={toLink}>
+            <StyledButtonCategory background={bgColor}>
+                <Img src={imgSrc} alt="category" />
+            </StyledButtonCategory>
+        </Link>
     );
 }
 

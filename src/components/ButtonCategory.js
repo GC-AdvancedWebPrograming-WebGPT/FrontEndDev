@@ -26,15 +26,13 @@ const Tag = styled.p`
     margin-top: 0px;
     margin-bottom: 0px;
     position: absolute;
-    left: 20%;
-    right: 20%;
+    left: 0%;
+    right: 0%;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    display: flex;
-    align-items: center;
     text-align: center;
 `
 
@@ -44,7 +42,7 @@ const Box = styled.div`
     height:130px;
 `
 
-function ButtonCategory ({toLink, imgSrc, bgColor}) {
+function ButtonCategory ({toLink, imgSrc, bgColor, tagName}) {
     //non selected bgColor = "#A7D9FF";
     //selected bgColor = "#4F7FDB";
 
@@ -53,7 +51,7 @@ function ButtonCategory ({toLink, imgSrc, bgColor}) {
             <StyledButtonCategory background={bgColor}>
                 <Img src={imgSrc} alt="category" />
             </StyledButtonCategory>
-            <Tag>123123</Tag>
+            <Tag>{tagName}</Tag>
         </Link> </Box>
         
     );

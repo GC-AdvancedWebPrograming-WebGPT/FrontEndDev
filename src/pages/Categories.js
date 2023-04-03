@@ -6,8 +6,7 @@ const Categories = () =>{
     return(
         <div>
             <h2>Categories</h2>
-
-            <ButtonCategory toLink="/condition" imgSrc={imgs.Cheers} bgColor="#A7D9FF" />
+            <ButtonCategory toLink="/condition" imgSrc={imgs.Cheers} bgColor="#A7D9FF" tagName="뼈"/>
         </div>
     );
 }

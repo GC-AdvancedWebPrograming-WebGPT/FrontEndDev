@@ -11,27 +11,51 @@ const StyledButtonCategory = styled.button`
     width: 100px;
     height: 100px;
     background: ${(props) => props.background};
+    border: none;
     border-radius: 20px;
 `;
 
 const Img = styled.img`
-    position: absolute;
-    left: 31%;
+    left: 30%;
     right: 30%;
     top: 20%;
     bottom: 20%;
 `
 
+const Tag = styled.p`
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+`
+
+const Box = styled.div`
+    position: relative;
+    width: 100px;
+    height:130px;
+`
+
 function ButtonCategory ({toLink, imgSrc, bgColor}) {
-    //bgColor = "#A7D9FF";
-    //bgColor = "#4F7FDB";
+    //non selected bgColor = "#A7D9FF";
+    //selected bgColor = "#4F7FDB";
 
     return (
-        <Link to={toLink}>
+        <Box> <Link to={toLink}>
             <StyledButtonCategory background={bgColor}>
                 <Img src={imgSrc} alt="category" />
             </StyledButtonCategory>
-        </Link>
+            <Tag>123123</Tag>
+        </Link> </Box>
+        
     );
 }
 

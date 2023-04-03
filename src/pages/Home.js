@@ -3,11 +3,13 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Navigator from "../components/Navigator";
 import banner from "../assets/banner.png";
-import { Outlet } from "react-router-dom";
+import SectionTop from "../components/SectionTop";
+import SectionBottom from "../components/SectionBottom";
+import Footer from "../components/Footer";
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 1000px;
+    height: 2000px;
 `;
 
 const Banner = styled.img`
@@ -22,8 +24,10 @@ function Home(){
         <Wrapper>
             <Header/> 
             <Navigator/>
-            <Outlet/>
             <Banner src={banner}/>
+            <SectionTop/>
+            <SectionBottom/>
+            <Footer/>
         </Wrapper>
     )
 }

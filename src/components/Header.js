@@ -4,25 +4,34 @@ import logo from "../assets/logo.png";
 
 const Wrapper = styled.div`
     width: 100%;
+    margin-top: 50px;
     height: 200px;
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
 `;
 
-const StyledHeader = styled.header`
-    display: block;
-    width: 100%;
-    padding: 50px 50px 50px 50px;
-`
-
 const Logo = styled.img`
-    width= 50;
-    height= 50;
+    position: absolute;
+    left: 5%;
+`;
+
+const Text = styled.text`
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 50px;
+    font-size: 64px;
+    font-weight: bold;
 `;
 const Header = () => {
     return(
         <Wrapper>
-            <StyledHeader>
-                <Logo src={logo}/>
-            </StyledHeader>
+            <Logo src={logo}/>
+            <Text>Web GPT</Text>
         </Wrapper>
     );
 }

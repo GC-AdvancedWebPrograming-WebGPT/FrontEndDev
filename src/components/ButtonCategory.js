@@ -23,7 +23,7 @@ const Img = styled.img`
 `
 
 const Tag = styled.p`
-    margin-top: 0px;
+    margin-top: 5px;
     margin-bottom: 0px;
     position: absolute;
     left: 0%;

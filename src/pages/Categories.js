@@ -7,7 +7,7 @@ const Categories = () =>{
     return(
         <div>
             <h2>Categories</h2>
-            <ChooseCategory children="1" />
+            <ChooseCategory selectedCategory="3" />
             <NutrientsInfo toLink="" imgSrc={Bone} itemName="123123" itemCompany="123" /> 
         </div>
     );

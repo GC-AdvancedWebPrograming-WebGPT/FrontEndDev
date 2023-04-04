@@ -39,7 +39,11 @@ const Tag = styled.p`
 const Box = styled.div`
     position: relative;
     width: 100px;
-    height:130px;
+    height: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 `
 
 function ButtonCategory ({toLink, imgSrc, bgColor, tagName}) {

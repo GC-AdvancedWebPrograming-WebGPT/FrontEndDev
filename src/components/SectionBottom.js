@@ -13,6 +13,12 @@ const Wrapper = styled.div`
 
 `;
 
+const MarkText = styled.text`
+    font-weight: bold;
+    padding-top: 4px;
+    padding-left: 15px;
+`;
+
 const Title = styled.text`
     position: absolute;
     padding-top: 50px;
@@ -27,9 +33,11 @@ const Text = styled.text`
     padding-left: 25px;
 `;
 
-const Upper = styled.span`
+const Upper = styled.div`
     position: absolute;
-    padding-top: 25px;
+    display: flex;
+    align-itmes: center;
+    padding-top: 20px;
     padding-left: 25px;
 
 `;
@@ -48,8 +56,8 @@ const SectionBottom = () =>{
     return(
         <Wrapper>
             <Upper>
-            <img src={mark} alt=""/>
-            &nbsp;&nbsp; 오늘의 건강 뉴스
+                <img src={mark} alt=""/>
+                <MarkText>오늘의 건강 뉴스</MarkText>
             </Upper>
             <br/>
             <Title>

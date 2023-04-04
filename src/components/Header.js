@@ -6,12 +6,6 @@ const Wrapper = styled.div`
     width: 100%;
     margin-top: 50px;
     height: 200px;
-
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-
 `;
 
 const Logo = styled.img`
@@ -22,8 +16,8 @@ const Logo = styled.img`
 const Text = styled.text`
     position: absolute;
     left: 50%;
+    top: 14%;
     transform: translate(-50%, -50%);
-    padding-top: 50px;
     font-size: 64px;
     font-weight: bold;
 `;

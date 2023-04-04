@@ -1,8 +1,15 @@
 import React from "react";
+import ChooseCategory from "../components/ChooseCategory";
+import NutrientsInfo from "../components/NutrientsInfo";
+import { Bone } from "../assets/category_shapes";
 
 const Categories = () =>{
     return(
-        <h2>Categories</h2>
+        <div>
+            <h2>Categories</h2>
+            <ChooseCategory selectedCategory="3" />
+            <NutrientsInfo toLink="" imgSrc={Bone} itemName="123123" itemCompany="123" /> 
+        </div>
     );
 }
 export default Categories;

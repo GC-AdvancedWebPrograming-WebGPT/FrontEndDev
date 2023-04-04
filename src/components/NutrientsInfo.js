@@ -13,12 +13,17 @@ const Box = styled.div`
 `
 
 const Img = styled.img`
+    margin: auto;
+    display: block;
     left: 0%;
     right: 0%;
     top: 5%;
     bottom: 5%;
 `
 const BackImg = styled.div`
+    align-items:center; 
+    display: flex; 
+    justify-content:center;
     position: absolute;
     left: 0%;
     right: 0%;

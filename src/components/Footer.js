@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     position : relative;
-    transform : translateY(-100%);   
+    transform : translateY(0%);   
     
     width: 90%;
     height: 100px;
@@ -11,7 +11,6 @@ const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-top: 300px;
-    margin-bottom: auto;
     
     background-color: #F7F7F7;
     display: flex;

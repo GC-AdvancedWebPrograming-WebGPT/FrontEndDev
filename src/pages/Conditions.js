@@ -1,8 +1,20 @@
 import React from "react";
+import Header from "../components/Header";
+import Navigator from "../components/Navigator";
+import styled from "styled-components";
+import Footer from "../components/Footer";
 
-const Conditions = () =>{
+const Wrapper = styled.div`
+    width: 100%;
+`;
+
+function Conditions (){
     return(
-        <h2>Conditions</h2>
+        <Wrapper>
+            <Header/>
+            <Navigator/>
+            <Footer/>
+        </Wrapper>
     );
 }
 export default Conditions;

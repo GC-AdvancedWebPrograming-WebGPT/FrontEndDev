@@ -23,8 +23,9 @@ const RankingText = styled.text`
 const ButtonBox = styled.div`
     position: relative;
     z-index: 0;
-    margin-left: 24px;
+    margin-left: auto;
     margin-top: -53px;
+    margin-right: auto;
     background: white;
     width: 200px;
     height: 240px;

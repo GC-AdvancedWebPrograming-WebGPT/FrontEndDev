@@ -47,7 +47,7 @@ const Box = styled.div`
     width: 300px;
     height: 300px;
     margin-top: 12px;
-    margin-left: 140px;
+    margin-left: 40px;
 `;
 
 function Ranking ({toLink, Ranking, imgSrc, itemName}) {

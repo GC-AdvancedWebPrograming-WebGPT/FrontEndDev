@@ -28,6 +28,7 @@ const Navigator = () => {
     <Wrapper>
         <StyledNavigator>
             <List>
+                <Link to="/mypage"><Element>MYPAGE</Element></Link>
                 <Link to ="/conditions"><Element>고민별</Element></Link>
                 <Link to ="/categories"><Element>종류별</Element></Link>
                 <Link to ="/"><Element>HOME</Element></Link>

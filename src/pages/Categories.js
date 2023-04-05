@@ -1,12 +1,14 @@
 import React from "react";
-import ButtonCategory from "../components/ButtonCategory";
-import * as imgs from "../assets/category_shapes/index";
+import ChooseCategory from "../components/ChooseCategory";
+import NutrientsInfo from "../components/NutrientsInfo";
+import { Bone } from "../assets/category_shapes";
 
 const Categories = () =>{
     return(
         <div>
             <h2>Categories</h2>
-            <ButtonCategory toLink="/condition" imgSrc={imgs.Cheers} bgColor="#A7D9FF" tagName="뼈"/>
+            <ChooseCategory selectedCategory="3" />
+            <NutrientsInfo toLink="" imgSrc={Bone} itemName="123123" itemCompany="123" /> 
         </div>
     );
 }

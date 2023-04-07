@@ -17,7 +17,7 @@ function Categories() {
         <Wrapper>
             <Header/>
             <Navigator/>
-            <ChooseCategory selectedCategory="3" />
+            <ChooseCategory selectedCategory="0" />
             <NutrientsInfo toLink="" imgSrc={Bone} itemName="123123" itemCompany="123" />
             <Footer/> 
         </Wrapper>

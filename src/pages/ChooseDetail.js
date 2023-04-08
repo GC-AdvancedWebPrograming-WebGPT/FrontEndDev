@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Navigator from "../components/Navigator";
 import DetailSection from "../components/DetailSection";
 import DetailFooter from "../components/DetailFooter";
-import ChooseCategory from "../components/ChooseCategory";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -12,15 +11,17 @@ const Wrapper = styled.div`
 `;
 
 function ChooseDetail(){
+
     return(
         <Wrapper>
             <Header/>
             <Navigator/>
-            <ChooseCategory/>
+            
             <DetailSection/>
             <DetailFooter/>
         </Wrapper>
-    )
+    );
+    // 중간에 "<ChooseCategory selectedCategory="1"/>" 삭제 (일시적인 오류)
 }
 
 export default ChooseDetail;

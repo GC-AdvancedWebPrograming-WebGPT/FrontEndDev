@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Box = styled.div`
     position: relative;
     width: 267px;
-    height: 416px;
+    height: 476px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
@@ -15,10 +15,9 @@ const Box = styled.div`
 const Img = styled.img`
     margin: auto;
     display: block;
-    left: 0%;
-    right: 0%;
-    top: 5%;
-    bottom: 5%;
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
 `
 const BackImg = styled.div`
     align-items:center; 
@@ -28,7 +27,7 @@ const BackImg = styled.div`
     left: 0%;
     right: 0%;
     top: 0%;
-    bottom: 15%;
+    bottom: 25%;
     background: #EDEDED;
     text-align: center;
     border-radius: 10px;
@@ -38,7 +37,7 @@ const NameCaption = styled.div`
     position: absolute;
     left: 4%;
     right: 4%;
-    top: 86%;
+    top: 75%;
     bottom: 7%;
     font-family: 'Pretendard';
     font-style: normal;

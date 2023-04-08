@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import ChooseCategory from "../components/ChooseCategory";
-import NutrientsInfo from "../components/NutrientsInfo";
-import { Bone } from "../assets/category_shapes";
 import Header from "../components/Header";
 import Navigator from "../components/Navigator";
 import styled from "styled-components";
 import Footer from "../components/Footer";
 
+import NutrientsData from "../components/NutrientsData";
 
 const Wrapper = styled.div`
     width: 100%;
-`;
+`
+
+export const AppContext = createContext();
 
 function Categories() {
+    const [categoryID, setCategoryID] = useState("1");
+    const changeCategory = (newID) => {
+        setCategoryID(newID);
+    }
+    
     return(
         <Wrapper>
             <Header/>
             <Navigator/>
-            <ChooseCategory selectedCategory="3" />
-            <NutrientsInfo toLink="" imgSrc={Bone} itemName="123123" itemCompany="123" />
+                <AppContext.Provider value={{ categoryID, changeCategory }}>
+                    <ChooseCategory selectedCategory={categoryID} />
+                    <NutrientsData type={categoryID} />
+                </AppContext.Provider>
             <Footer/> 
         </Wrapper>
     );

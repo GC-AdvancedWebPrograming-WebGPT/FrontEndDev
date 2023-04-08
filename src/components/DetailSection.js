@@ -1,20 +1,20 @@
 import React from "react";
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
-import imgSrc from "../assets/dobi.png"
 
 const Wrapper = styled.div`
     width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 10px;
     display: flex;
 `;
 
 const LeftDiv = styled.div`
     width: 40%;
     float: left;
-    margin-left: 10%;
+    margin-left: 15%;
 `;
 
 const Img = styled.img`
@@ -44,7 +44,7 @@ const BuyButton = styled.button`
     border-radius: 10px;
     border: none;
     background-color: #A7D9FF;
-    margin-left: 20%;
+    margin-left: 12.2%;
 `
 
 const Hr = styled.hr`
@@ -62,9 +62,11 @@ const DetailUsage = styled.div`
 
 const MyNutritionAddDiv = styled.div`
     position: relative;
+    width: 700px;
 `;
 
 const MyNutritionAddButton = styled.button`
+    position: absolute;
     padding: 20px;
     width: 250px;
     height: 70px;
@@ -74,29 +76,30 @@ const MyNutritionAddButton = styled.button`
     color: white;
     font-weight: bold;
     font-size: 16px;
-    margin-left: 90%;
+    right: 0;
 `;
 
-const DetailSection = () =>{
+const DetailSection = (props) =>{
+    const { id } = useParams();
     return(
         <Wrapper>
             <LeftDiv>
-                <Img src={imgSrc} alt="Detail" />
+                <Img src={process.env.PUBLIC_URL + '/nutrient_pics/image '+ (Number(id) + 1)+'.png'} alt="Detail" />
             </LeftDiv>
             <RightDiv>
                 <DetailTitleDiv>
-                    <Title>Nutritions 1</Title>
-                    <BuyButton>{"➡구매처 바로가기"}</BuyButton>
+                    <Title>{ props.nutrients[id].title }</Title>
+                    <BuyButton onClick={() => window.open('https://jaimemin.tistory.com/1449', '_blank')}>{"➡구매처 바로가기"}</BuyButton>
                 </DetailTitleDiv>
                 <Hr></Hr>
                 <Detailbriefexplanation>
                     <br/>
-                    <h4>L-테아닌 성분과 멜라토닌 함유량이 높은 세인트존스워트분말, 캐모마일 등 부원료를 함께 담아 스트레스로 인한 긴장 완화에 도움을 줄 수 있습니다.</h4>
+                    <h4>{ props.nutrients[id].content }</h4>
                 </Detailbriefexplanation>
                 <Hr></Hr>
                 <DetailUsage>
                     <br/>
-                    <h4>용법 및 용량 | 1일 2회 1알 복용</h4>
+                    <h4>용법 및 용량 | { props.nutrients[id].usage }</h4>
                 </DetailUsage>
                 <Hr></Hr>
                 <br/>

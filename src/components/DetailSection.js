@@ -89,7 +89,7 @@ const DetailSection = (props) =>{
             <RightDiv>
                 <DetailTitleDiv>
                     <Title>{ props.nutrients[id].title }</Title>
-                    <BuyButton onClick={() => window.open('https://jaimemin.tistory.com/1449', '_blank')}>{"➡구매처 바로가기"}</BuyButton>
+                    <BuyButton onClick={() => window.open(props.nutrients[id].buyurl, '_blank')}>{"➡구매처 바로가기"}</BuyButton>
                 </DetailTitleDiv>
                 <Hr></Hr>
                 <Detailbriefexplanation>

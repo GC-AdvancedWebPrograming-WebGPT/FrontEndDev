@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import ChooseCategory from "../components/ChooseCategory";
 import Header from "../components/Header";
 import Navigator from "../components/Navigator";
@@ -11,14 +11,22 @@ const Wrapper = styled.div`
     width: 100%;
 `
 
+export const AppContext = createContext();
+
 function Categories() {
+    const [categoryID, setCategoryID] = useState("1");
+    const changeCategory = (newID) => {
+        setCategoryID(newID);
+    }
     
     return(
         <Wrapper>
             <Header/>
             <Navigator/>
-            <ChooseCategory selectedCategory="0" />
-            <NutrientsData type="1" />
+                <AppContext.Provider value={{ categoryID, changeCategory }}>
+                    <ChooseCategory selectedCategory={categoryID} />
+                    <NutrientsData type={categoryID} />
+                </AppContext.Provider>
             <Footer/> 
         </Wrapper>
     );

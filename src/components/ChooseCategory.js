@@ -40,13 +40,13 @@ const ChooseCategory = ({selectedCategory}) => {
     return(
         <Wrapper>
             <tr>
-                <td width="28%"> <Header>카테고리별 영양제</Header> </td>
-                <td width="12%"> <ButtonCategory toLink="/conditions" imgSrc={imgs.Energy} bgColor={Colors[0]} tagName="피로/활력"/> </td>
-                <td width="12%"> <ButtonCategory toLink="/conditions" imgSrc={imgs.Stomach} bgColor={Colors[1]} tagName="소화"/> </td>
-                <td width="12%"> <ButtonCategory toLink="/conditions" imgSrc={imgs.Cheers} bgColor={Colors[2]} tagName="간 건강"/> </td>
-                <td width="12%"> <ButtonCategory toLink="/conditions" imgSrc={imgs.Eye} bgColor={Colors[3]} tagName="눈 건강"/> </td>
-                <td width="12%"> <ButtonCategory toLink="/conditions" imgSrc={imgs.Bone} bgColor={Colors[4]} tagName="뼈 건강"/> </td>
-                <td width="12%"> <ButtonCategory toLink="/conditions" imgSrc={imgs.Threedots} bgColor={Colors[5]} tagName="기타"/> </td>
+                <td width="28%"> <Header >카테고리별 영양제</Header> </td>
+                <td width="12%"> <ButtonCategory imgSrc={imgs.Energy} bgColor={Colors[0]} tagName="피로/활력" btnID="1"/> </td>
+                <td width="12%"> <ButtonCategory imgSrc={imgs.Stomach} bgColor={Colors[1]} tagName="소화" btnID="2"/> </td>
+                <td width="12%"> <ButtonCategory imgSrc={imgs.Cheers} bgColor={Colors[2]} tagName="간 건강" btnID="3"/> </td>
+                <td width="12%"> <ButtonCategory imgSrc={imgs.Eye} bgColor={Colors[3]} tagName="눈 건강" btnID="4"/> </td>
+                <td width="12%"> <ButtonCategory imgSrc={imgs.Bone} bgColor={Colors[4]} tagName="뼈 건강" btnID="5"/> </td>
+                <td width="12%"> <ButtonCategory imgSrc={imgs.Threedots} bgColor={Colors[5]} tagName="기타" btnID="6"/> </td>
             </tr>
         </Wrapper>
     );

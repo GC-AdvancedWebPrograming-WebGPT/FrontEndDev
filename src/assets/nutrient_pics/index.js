@@ -23,3 +23,4 @@ export const Img22 = require('./image 22.png');
 export const Img23 = require('./image 23.png');
 export const Img24 = require('./image 24.png');
 export const Img25 = require('./image 25.png');
+export const Img26 = require('./image 26.jpg');

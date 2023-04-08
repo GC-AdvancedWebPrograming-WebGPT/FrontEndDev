@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { AppContext } from "../pages/Categories";
 
 const StyledButtonCategory = styled.button`
     position: relative;
@@ -46,17 +47,18 @@ const Box = styled.div`
     margin-bottom: 10px;
 `
 
-function ButtonCategory ({toLink, imgSrc, bgColor, tagName}) {
+function ButtonCategory ({imgSrc, bgColor, tagName, btnID}) {
     //non selected bgColor = "#A7D9FF";
     //selected bgColor = "#4F7FDB";
+    const {changeCategory} = useContext(AppContext);
 
     return (
-        <Box> <Link to={toLink}>
+        <Box onClick={() => changeCategory(btnID)}>
             <StyledButtonCategory background={bgColor}>
                 <Img src={imgSrc} alt="category" />
             </StyledButtonCategory>
             <Tag>{tagName}</Tag>
-        </Link> </Box>
+        </Box>
         
     );
 }

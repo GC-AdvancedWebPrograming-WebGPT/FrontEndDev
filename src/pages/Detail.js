@@ -4,23 +4,21 @@ import Header from "../components/Header";
 import Navigator from "../components/Navigator";
 import DetailSection from "../components/DetailSection";
 import DetailFooter from "../components/DetailFooter";
-import ChooseCategory from "../components/ChooseCategory";
 
 const Wrapper = styled.div`
     width: 100%;
     height: 2000px;
 `;
 
-function ChooseDetail(){
+function Detail(props){
     return(
         <Wrapper>
             <Header/>
             <Navigator/>
-            <ChooseCategory/>
-            <DetailSection/>
-            <DetailFooter/>
+            <DetailSection nutrients={props.nutrients}/>
+            <DetailFooter nutrients={props.nutrients}/>
         </Wrapper>
-    )
+    );
 }
 
-export default ChooseDetail;
+export default Detail;

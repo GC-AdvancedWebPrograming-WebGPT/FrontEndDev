@@ -36,7 +36,6 @@ const Text = styled.text`
 const Upper = styled.div`
     position: absolute;
     display: flex;
-    align-itmes: center;
     padding-top: 20px;
     padding-left: 25px;
 

@@ -28,7 +28,7 @@ const Header = styled.div`
     font-size: 30px;
 `
 
-function ChooseCategory({selectedCategory}) {
+const ChooseCategory = ({selectedCategory}) => {
     // selectedCategory는 0부터 6 사이의 정수 중 하나임.
     //non selected bgColor = "#A7D9FF";
     //selected bgColor = "#4F7FDB";

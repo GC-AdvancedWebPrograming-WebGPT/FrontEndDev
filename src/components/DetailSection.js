@@ -81,6 +81,7 @@ const MyNutritionAddButton = styled.button`
 
 const DetailSection = (props) =>{
     const { id } = useParams();
+    // const findNutrients = props.nutrients.find(function(nutrient) { return nutrient.id = id })
     return(
         <Wrapper>
             <LeftDiv>

@@ -4,8 +4,11 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import Conditions from "./pages/Conditions";
 import MyPage from "./pages/MyPage";
-import ChooseDetail from "./pages/ChooseDetail";
+import Detail from "./pages/Detail";
+import data from "./data.js"
+
 function App() {
+  const [nutrients, setNutrients] = useState(data);
   return (
 
     <Routes>
@@ -14,7 +17,7 @@ function App() {
       <Route path="categories" element={<Categories/>}/>
       <Route path="conditions" element={<Conditions/>}/>
       <Route path="mypage" element={<MyPage/>}/>
-      <Route path="choosedetail" element={<ChooseDetail/>}/>
+      <Route path="detail/:id" element={<Detail nutrients={ nutrients }/>}/>
     </Routes>
   );
 }

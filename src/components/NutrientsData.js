@@ -140,7 +140,7 @@ const nutrientList_etc = [
 
 const NutrientItem = ({ dat }) => (
     <Box>
-        <NutrientsInfo toLink="/choosedetail" imgSrc={dat.pics} itemName={dat.name} itemCompany={dat.company} />
+        <NutrientsInfo toLink={`/detail/${dat.id-1}`} imgSrc={dat.pics} itemName={dat.name} itemCompany={dat.company} />
     </Box>
 );
 

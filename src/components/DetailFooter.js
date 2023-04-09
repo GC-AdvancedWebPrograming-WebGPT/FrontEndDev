@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
     position : relative;
-    transform : translateY(-100%);   
+    transform : translateY(-150%);   
     width: 90%;
     height: 100px;
     margin-left: auto;
@@ -11,7 +12,6 @@ const Wrapper = styled.div`
     margin-top: 300px;
     margin-bottom: auto;
     display: flex;
-    
 `;
 
 const DetailFooterDiv = styled.div`
@@ -39,12 +39,12 @@ const Hr = styled.hr`
 const Text = styled.text`
     padding-top: 25px;
     padding-left: 50px;
-    font-weight: bold;
 `;
 
-const DetailFooter = () => {
+const DetailFooter = (props) => {
     const [detailMenu, setDetailMenu] = useState([true, false]);
     const [isClick1, setIsClick1] = useState(true);
+    const { id } = useParams();
     return(
         <Wrapper>
             <DetailFooterDiv>
@@ -67,10 +67,10 @@ const DetailFooter = () => {
                 <Hr></Hr>
                 {
                     (function () {
-                        if(isClick1 !== true) {
+                        if(isClick1 === true) {
                             return (
                                 <div>
-                                    <Text>제품 상세 설명 페이지</Text>
+                                    <Text>{ props.nutrients[id].product }</Text>
                                 </div>
                             );
                         }
@@ -78,7 +78,7 @@ const DetailFooter = () => {
                             return ( function() {
                                 return (
                                     <div>
-                                        <Text>성분 정보 페이지</Text>
+                                        <Text>{ props.nutrients[id].ingredient }</Text>
                                     </div>
                                 );
                             })()

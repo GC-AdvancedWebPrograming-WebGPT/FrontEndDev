@@ -9,6 +9,7 @@ import data from "./data.js"
 
 function App() {
   const [nutrients] = useState(data);
+  const [nutrients, setNutrients] = useState(data);
   return (
     <Routes>
       <Route path="/" element={<Home/>}/>

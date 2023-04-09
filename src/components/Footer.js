@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 300px;
+    margin-top: 100px;
     
     background-color: #F7F7F7;
     display: flex;

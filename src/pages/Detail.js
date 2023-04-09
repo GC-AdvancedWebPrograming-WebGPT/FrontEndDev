@@ -10,18 +10,15 @@ const Wrapper = styled.div`
     height: 2000px;
 `;
 
-function ChooseDetail(){
-
+function Detail(props){
     return(
         <Wrapper>
             <Header/>
             <Navigator/>
-            
-            <DetailSection/>
-            <DetailFooter/>
+            <DetailSection nutrients={props.nutrients}/>
+            <DetailFooter nutrients={props.nutrients}/>
         </Wrapper>
     );
-    // 중간에 "<ChooseCategory selectedCategory="1"/>" 삭제 (일시적인 오류)
 }
 
-export default ChooseDetail;
+export default Detail;

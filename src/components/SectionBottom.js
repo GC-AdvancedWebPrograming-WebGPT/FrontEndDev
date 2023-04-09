@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     background-color: #F7F7F7;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 400px;
+    margin-top: 100px;
 
 `;
 

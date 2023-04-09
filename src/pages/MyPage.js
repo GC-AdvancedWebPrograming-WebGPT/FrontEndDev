@@ -53,7 +53,7 @@ function MyPage(){
                 <TextContainer>
                     <Text>닉네임: </Text> 도비
                     <br/><br/>
-                    <Text>자기소개: </Text> 도비는 종강하면 자유에요!
+                    <Text>자기소개: </Text> 안녕하세요 도비입니다.
                 </TextContainer>
             </Container>
         </Wrapper>

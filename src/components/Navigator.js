@@ -19,6 +19,7 @@ const List = styled.ul`
 
 const Element = styled.li`
     float: right;
+    color: black;
     margin-right: 20px;
     font-weight: bold;
 `;

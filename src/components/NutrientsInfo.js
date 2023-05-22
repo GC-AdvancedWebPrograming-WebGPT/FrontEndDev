@@ -39,10 +39,11 @@ const NameCaption = styled.div`
     right: 4%;
     top: 75%;
     bottom: 7%;
+    margin-top: 5px;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 29px;
     text-align: left;
     color: #1F1F1F;
@@ -54,6 +55,7 @@ const CompanyCaption = styled.div`
     right: 4%;
     top: 94%;
     bottom: 0%;
+    margin-top: 5px;
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 500;

@@ -182,6 +182,7 @@ const NutrientsData = ({ type }) => {
         pCont = "상단바에서 다른 카테고리를 찾아보세요"
     }
 
+    // targetData 부분이 실제 데이터셋 내용임
     return(
         <Wrapper>
             <HeadName>{h1Cont}</HeadName>

@@ -6,6 +6,8 @@ import Conditions from "./pages/Conditions";
 import MyPage from "./pages/MyPage";
 import Detail from "./pages/Detail";
 import data from "./data.js"
+import login from "./pages/Login";
+import Login from "./pages/Login";
 
 function App() {
   const [nutrients] = useState(data);
@@ -17,6 +19,7 @@ function App() {
       <Route path="conditions" element={<Conditions/>}/>
       <Route path="mypage" element={<MyPage/>}/>
       <Route path="detail/:id" element={<Detail nutrients={ nutrients }/>}/>
+      <Route path="login" element={<Login/>}/>
     </Routes>
   );
 }

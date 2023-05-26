@@ -28,7 +28,6 @@ nutrients:{
 
 function Detail(props){
 
-
     return(
         <Wrapper>
             <Header/>

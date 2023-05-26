@@ -141,7 +141,7 @@ const PName = styled.p`
 
 const targetLists = ({ typeString }) => {
     const empty = [
-        {nutrientId:1, imageUrl:"", title:"검색 결과를 찾지 못했습니다", company:"서버 에러일 수 있습니다."}
+        {nutrientId:1, imageUrl:"", title:"검색 결과를 찾지 못했습니다"}
     ];
 
     var BASE_URL = 'http://localhost:8000';
@@ -160,7 +160,7 @@ const targetLists = ({ typeString }) => {
 
 const NutrientItem = ({ dat }) => (
     <Box>
-        <NutrientsInfo toLink={`/detail/${dat.nutrientId}`} imgSrc={dat.imageUrl} itemName={dat.title} itemCompany={dat.company} />
+        <NutrientsInfo toLink={`/detail/${dat.nutrientId}`} imgSrc={dat.imageUrl} itemName={dat.title} itemCompany="자세히 보기" />
     </Box>
 );
 

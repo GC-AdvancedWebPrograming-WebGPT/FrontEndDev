@@ -37,7 +37,7 @@ const ChooseCategory = ({selectedCategory}) => {
     const dispatch = useDispatch();
     const handleCategoryChange = (categoryID) => {
         dispatch(changeCategory(categoryID));
-      };
+    };
 
     var targ = Number(selectedCategory);
     let Colors = ['#A7D9FF','#A7D9FF','#A7D9FF','#A7D9FF','#A7D9FF','#A7D9FF'];

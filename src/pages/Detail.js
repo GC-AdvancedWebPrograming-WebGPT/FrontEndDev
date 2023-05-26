@@ -10,7 +10,24 @@ const Wrapper = styled.div`
     height: 2000px;
 `;
 
+/*
+nutrients:{
+    nutrientId:Long
+    title:String
+    content:String
+    String:manual
+    String:imageUrl
+    comments:{
+        commentId:Long
+        content:String
+        userId:Long
+        createdAt:String
+    }
+}
+ */
+
 function Detail(props){
+
     return(
         <Wrapper>
             <Header/>

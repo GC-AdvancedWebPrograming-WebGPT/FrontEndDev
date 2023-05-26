@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import authReducer from './authReducer';
-import CategoryReducer from './CategoryReducer';
+import categoryReducer from './categoryReducer';
+import conditionReducer from './conditionReducer';
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  category: CategoryReducer,
+  category: categoryReducer,
+  condition: conditionReducer,
 });
 
 export default rootReducer;

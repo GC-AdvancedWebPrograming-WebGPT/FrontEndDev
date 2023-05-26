@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { conditionChange } from "../store/actions/CategoryActions";
-import { useDispatch, useSelector } from "react-redux";
+import ButtonCondition from "./ButtonCondition";
+import { useDispatch } from "react-redux";
+import { changeCondition } from "../store/actions/changeCondition";
 
 const Wrapper = styled.table`
     width: 90%;
@@ -27,49 +28,27 @@ const Header = styled.div`
     font-size: 30px;
 `
 
-const Box = styled.div`
-    position: relative;
-    width: 100%;
-    height: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    background: ${(props) => props.background};
-`
+const ChooseCondition = ({selectedCondition}) => {
 
-const Tag = styled.p`
-    margin-bottom: 0px;
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    font-family: 'Pretendard';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 40px;
-    text-align: center;
-`
-
-const ChooseCondition = () => {
-
-    const selector = useSelector( (state) => state )
     const dispatch = useDispatch();
-    const color = "#7CBFF5";
+    const handleConditionChange = (conditionID) => {
+        dispatch(changeCondition(conditionID));
+    };
+
+    // selected bgColor = "#A7D9FF"
+    var targ = Number(selectedCondition);
+    let Colors = ["#000000, #000000, #000000, #000000, #000000"];
+    if(targ > 0) Colors[targ-1] = "#A7D9FF";
 
     return(
         <Wrapper>
             <tr>
                 <td width="30%"> <Header>종류별 영양제</Header> </td>
-                <td width="14%"> <Box onClick={() => dispatch(conditionChange(0))}>
-                    <Tag> 비타민 </Tag> </Box> </td>
-                <td width="14%"> <Box onClick={() => dispatch(conditionChange(1))}>
-                    <Tag> 유산균 </Tag> </Box> </td>
-                <td width="14%"> <Box onClick={() => dispatch(conditionChange(2))}>
-                    <Tag> 밀크씨슬 </Tag> </Box> </td>
-                <td width="14%"> <Box onClick={() => dispatch(conditionChange(3))}>
-                    <Tag> 루테인 </Tag> </Box> </td>
-                <td width="14%"> <Box onClick={() => dispatch(conditionChange(4))}>
-                    <Tag> 칼슘 </Tag> </Box> </td>
+                <td width="14%"> <ButtonCondition bgColor={Colors[0]} ButtonName="비타민" btnID="1" onConditionChange={handleConditionChange}/> </td>
+                <td width="14%"> <ButtonCondition bgColor={Colors[1]} ButtonName="유산균" btnID="2" onConditionChange={handleConditionChange}/> </td>
+                <td width="14%"> <ButtonCondition bgColor={Colors[2]} ButtonName="밀크씨슬" btnID="3" onConditionChange={handleConditionChange}/> </td>
+                <td width="14%"> <ButtonCondition bgColor={Colors[3]} ButtonName="루테인" btnID="4" onConditionChange={handleConditionChange}/> </td>
+                <td width="14%"> <ButtonCondition bgColor={Colors[4]} ButtonName="칼슘" btnID="5" onConditionChange={handleConditionChange}/> </td>
             </tr>
         </Wrapper>
     );

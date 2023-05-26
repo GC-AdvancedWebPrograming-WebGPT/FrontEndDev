@@ -8,14 +8,12 @@ const CategoryReducer = (state = initialState, action) => {
         case 'CATEGORY_CHANGE':
             return{
                 ...state,
-                categoryID: 1,
-                conditionID: 0,
+                categoryID: action.payload,
             };
         case 'CONDITION_CHANGE':
             return{
                 ...state,
-                categoryID: 0,
-                conditionID: 1,
+                conditionID: action.payload,
             }
         default:
             return state;

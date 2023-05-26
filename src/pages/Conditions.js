@@ -7,7 +7,6 @@ import Footer from "../components/Footer";
 import NutrientsData from "../components/NutrientsData";
 import { useSelector, useDispatch } from "react-redux";
 import { changeCondition } from "../store/actions/changeCondition";
-import ChooseCondition from "../components/ChooseCondition";
 
 const Wrapper = styled.div`
     width: 100%;

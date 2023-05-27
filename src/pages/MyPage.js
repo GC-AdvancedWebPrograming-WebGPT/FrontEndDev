@@ -123,6 +123,7 @@ const BoldText = styled.text`
     text-align: center;
 `;
 
+const accessToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNjg1MTk1NzI3LCJleHAiOjE2ODUxOTkzMjd9.31oFMyX7g34cXGEhvunXxAjHyoTZ8ie1hnSQILwOug2GaRjwkbtPaReMZO_WobNEZIzxurv2oq1Lo_jyzfiaIg";
 
 
 function MyPage(){
@@ -132,7 +133,9 @@ function MyPage(){
     const [myList, setMyList] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/users/me').then((res) => {
+        axios.get('http://localhost:8000/user-service/api/users/me',
+        { headers: { "Authorization" : `Bearer ${accessToken}`}}
+        ).then((res) => {
             setUSer(res.nickname)
             setImage(res.profileImageUrl)
             setMyList(res.userNutrients)

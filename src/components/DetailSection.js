@@ -12,9 +12,9 @@ const Wrapper = styled.div`
 `;
 
 const LeftDiv = styled.div`
-    width: 40%;
+    width: 100%;
     float: left;
-    margin-left: 15%;
+    margin-left: 10%;
 `;
 
 const Img = styled.img`
@@ -54,6 +54,7 @@ const Hr = styled.hr`
 
 const Detailbriefexplanation = styled.div`
     position: relative;
+    width: 90%;
 `;
 
 const DetailUsage = styled.div`

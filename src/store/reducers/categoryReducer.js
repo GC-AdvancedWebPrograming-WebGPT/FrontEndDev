@@ -1,17 +1,23 @@
 const initialState = {
-    categoryID: "1",
+    categoryID: 0,
+    conditionID: 0,
 };
-  
-const categoryReducer = (state = initialState, action) => {
+
+const CategoryReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'CHANGE_CATEGORY':
-            return {
+        case 'CATEGORY_CHANGE':
+            return{
                 ...state,
                 categoryID: action.payload,
             };
+        case 'CONDITION_CHANGE':
+            return{
+                ...state,
+                conditionID: action.payload,
+            }
         default:
             return state;
     }
 };
-  
-export default categoryReducer;
+
+export default CategoryReducer;

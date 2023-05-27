@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import NutrientsInfo from "./NutrientsInfo";
 import styled from "styled-components";
 import axios from "axios";
@@ -145,7 +145,7 @@ const targetLists = ({ typeString }) => {
     ];
 
     var BASE_URL = 'http://localhost:8000';
-    var PATH_URL = '/api/nutrients/categories?=';
+    var PATH_URL = '/nutrient-service/api/nutrients/categories?=';
     axios.get(BASE_URL + PATH_URL + typeString)
         .then(response => {
             console.log("RESPONSE : " + response);

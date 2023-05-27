@@ -48,7 +48,7 @@ const targetLists = ({ typeString }) => {
     ];
 
     var BASE_URL = 'http://localhost:8000';
-    var PATH_URL = '/api/nutrients/conditions?=';
+    var PATH_URL = '/nutrient-service/api/nutrients/conditions?=';
     axios.get(BASE_URL + PATH_URL + typeString)
         .then(response => {
             console.log("RESPONSE : " + response);

@@ -17,7 +17,7 @@ const Redirection = () => {
   })
   .then((response) => {
     console.log(JSON.stringify(response));
-    localStorage.setItem('token', response.data.accessToken);
+    localStorage.setItem('accessToken', response.data.accessToken);
     navigate("/");
   });
             

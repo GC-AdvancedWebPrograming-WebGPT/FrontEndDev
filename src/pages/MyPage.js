@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Navigator from "../components/Navigator";
-import profile from "../assets/dobi.png";
 import axios from "axios";
 
 const Wrapper = styled.div`

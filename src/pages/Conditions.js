@@ -4,9 +4,9 @@ import Header from "../components/Header";
 import Navigator from "../components/Navigator";
 import styled from "styled-components";
 import Footer from "../components/Footer";
-import NutrientsData from "../components/NutrientsData";
 import { useSelector, useDispatch } from "react-redux";
 import { changeCondition } from "../store/actions/changeCondition";
+import NutrientsData2 from "../components/NutrientsData2";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -27,8 +27,7 @@ function Conditions (){
               selectedCondition={conditionID}
               onConditionChange={handleConditionChange}
             />
-            <NutrientsData type={conditionID} />
-            <ChooseCondition/>
+            <NutrientsData2 type={conditionID} />
             <Footer/>
         </Wrapper>
     );

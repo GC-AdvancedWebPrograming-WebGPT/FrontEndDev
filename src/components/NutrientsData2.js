@@ -60,7 +60,6 @@ const targetLists = ({ typeString }) => {
             console.log("ERROR : " + error.message);
             return empty;
         });
-    return empty;
 }
 
 const NutrientItem = ({ dat }) => (

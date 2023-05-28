@@ -1,28 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Navigator from "../components/Navigator";
-import profile from "../assets/dobi.png";
+import axios from "axios";
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 2000px;
+    height: 100%;
 `;
 
-const Container = styled.div`
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 200px;
-
-    background-color: #F2F2F2;
+const Container  = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 70px;
+    gap: 120px;
+
+    width: 100%;
+`;
+
+
+const InfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 275px;
 
 `;
 
-const ImageContainer = styled.div`
-    margin-top: auto;
-    margin-left: 50px;
+const InfoMainContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 55px;
+    gap: 300px;
+
+    width: 100%;
+    height: 260px;
+
+    background: #E7F5FF;
+    border-radius: 20px;
+
+
+
 `;
 const Grid = styled.div`
     display: grid;
@@ -42,15 +64,31 @@ const ProfileContainer = styled.div`
 
 `;
 
-const Profile = styled.img`
-    background-color: white;
-    width: 160px;
-    height: 180px;
-    border-radius: 50%;
+const ProfileImage = styled.img`
+    box-sizing: border-box;
+
+    width: 170px;
+    height: 170px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
 `;
 
-const Text = styled.text`
-    font-weight: bold;
+const ProfileText = styled.div`
+    width: 342px;
+    height: 40px;
+
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
 `;
 
     const MyNutrientsContainer = styled.div`

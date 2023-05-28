@@ -122,18 +122,23 @@ const BoldText = styled.text`
     text-align: center;
 `;
 
+const accessToken = localStorage.accessToken
 
 
 function MyPage(){
 
-    const [user, setUSer] = useState([]);
-    const [image, setImage] = useState([]);
-    const [mylist, setMyList] = useState([]);
+    const [user, setUSer] = useState("로그인을 해주세요");
+    const [image, setImage] = useState("");
+    const [myList, setMyList] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/users/me').then((res) => {
-            setUSer(res.nickname)
-            setImage(res.profileImageUrl)
+        axios.get('http://localhost:3000/user-service/api/users/me',
+        { headers: { "Authorization" : `Bearer ${accessToken}`}}
+        ).then((res) => {
+            console.log(res);
+            setUSer(res.data.nickname)
+            setImage(res.data.profileImageUrl)
+            setMyList(res.data.userNutrients)
         })
     })
 
@@ -142,7 +147,7 @@ function MyPage(){
             <Header/>
             <Navigator/>
            <Container>
-           <InfoContainer>
+	        <InfoContainer>
                 <InfoMainContainer>
                     <ProfileContainer>
                         <ProfileImage src={image}/>
@@ -158,8 +163,14 @@ function MyPage(){
 
             </InfoContainer>
             <NutrientsContainer>
+                {myList.map((userNutrients) => (
+                        <div key={userNutrients.nutrientId}>
+                            <div>{userNutrients.title}</div>
+                            <img src={userNutrients.imageUrl} alt={userNutrients.title} />
+                        </div>
+                    ))}
             </NutrientsContainer>
-    </Container>
+	 </Container>
         </Wrapper>
     )
 }

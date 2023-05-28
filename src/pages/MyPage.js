@@ -46,7 +46,11 @@ const InfoMainContainer = styled.div`
 
 
 `;
-
+const Grid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+`
 const ProfileContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -121,7 +125,30 @@ const BoldText = styled.text`
     align-items: center;
     text-align: center;
 `;
-
+const Box = styled.div`
+    position: relative;
+    width: 267px;
+    height: 476px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+`
+const NameCaption = styled.div`
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 75%;
+    bottom: 7%;
+    margin-top: 5px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+    text-align: left;
+    color: #1F1F1F;
+`
 const accessToken = localStorage.accessToken
 
 
@@ -129,18 +156,19 @@ function MyPage(){
 
     const [user, setUSer] = useState("로그인을 해주세요");
     const [image, setImage] = useState("");
-    const [myList, setMyList] = useState({});
+    const [myList, setMyList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/user-service/api/users/me',
+        axios.get('http://localhost:8000/user-service/api/users/me',
         { headers: { "Authorization" : `Bearer ${accessToken}`}}
         ).then((res) => {
             console.log(res);
             setUSer(res.data.nickname)
             setImage(res.data.profileImageUrl)
-            setMyList(res.data.userNutrients)
+            setMyList(res.data.userNutrients.userNutrients || [])
+            console.log(Array.isArray(myList))
         })
-    })
+    }, [])
 
     return(
         <Wrapper>
@@ -157,18 +185,22 @@ function MyPage(){
                     </ProfileContainer>
                     <MyNutrientsContainer>
                         My 영양제<br/><br/>
-                        <BoldText>0</BoldText> 개
+                        <BoldText>2</BoldText> 개
                     </MyNutrientsContainer>
                 </InfoMainContainer>
 
             </InfoContainer>
             <NutrientsContainer>
-                {myList.map((it) => (
-                        <div key={it.nutrientId}>
-                            <div>{it.title}</div>
-                            <img src={it.imageUrl} alt={it.title} />
-                        </div>
-                    ))}
+
+            <Grid>
+            {myList && myList.map((it) => (<div key={it.nutrientId}>
+                        <div>{it.title}</div>
+                        <img src={it.imageUrl} alt={it.title} />
+                    </div>
+                ))}
+                    
+            </Grid>
+                
             </NutrientsContainer>
 	 </Container>
         </Wrapper>

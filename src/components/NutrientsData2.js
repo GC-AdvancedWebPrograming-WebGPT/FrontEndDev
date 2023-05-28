@@ -48,8 +48,10 @@ const targetLists = ({ typeString }) => {
     ];
 
     var BASE_URL = 'http://localhost:8000';
-    var PATH_URL = '/api/nutrients/conditions?=';
-    axios.get(BASE_URL + PATH_URL + typeString)
+    var PATH_URL = '/nutrient-service/api/nutrients/conditions?=';
+    var token = "111";
+    axios.defaults.withCredentials = true;
+    axios.get(BASE_URL + PATH_URL + typeString, { headers: { "Authorization" : `Bearer ${token}`}})
         .then(response => {
             console.log("RESPONSE : " + response);
             return response.data;

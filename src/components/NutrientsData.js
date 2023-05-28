@@ -144,9 +144,12 @@ const targetLists = ({ typeString }) => {
         {nutrientId:1, imageUrl:"", title:"검색 결과를 찾지 못했습니다"}
     ];
 
+
     var BASE_URL = 'http://localhost:8000';
-    var PATH_URL = '/api/nutrients/categories?=';
-    axios.get(BASE_URL + PATH_URL + typeString)
+    var PATH_URL = '/nutrient-service/api/nutrients/categories?=';
+    var token = "111";
+    axios.defaults.withCredentials = true;
+    axios.get(BASE_URL + PATH_URL + typeString, { headers: { "Authorization" : `Bearer ${token}`}})
         .then(response => {
             console.log("RESPONSE : " + response);
             return response.data;

@@ -136,9 +136,10 @@ function MyPage(){
         axios.get('http://localhost:8000/user-service/api/users/me',
         { headers: { "Authorization" : `Bearer ${accessToken}`}}
         ).then((res) => {
-            setUSer(res.nickname)
-            setImage(res.profileImageUrl)
-            setMyList(res.userNutrients)
+            console.log(res);
+            setUSer(res.data.nickname)
+            setImage(res.data.profileImageUrl)
+            setMyList(res.data.userNutrients)
         })
     })
 
@@ -163,12 +164,12 @@ function MyPage(){
 
             </InfoContainer>
             <NutrientsContainer>
-                {myList.map((nutrient) => (
+                {/* {myList.map((nutrient) => (
                         <div key={nutrient.nutrientId}>
                             <div>{nutrient.title}</div>
                             <img src={nutrient.imageUrl} alt={nutrient.title} />
                         </div>
-                    ))}
+                    ))} */}
             </NutrientsContainer>
 	 </Container>
         </Wrapper>

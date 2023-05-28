@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import NutrientsInfo from "./NutrientsInfo";
 import styled from "styled-components";
 import axios from "axios";
@@ -144,8 +144,13 @@ const targetLists = ({ typeString }) => {
         {nutrientId:1, imageUrl:"", title:"검색 결과를 찾지 못했습니다"}
     ];
 
+
     var BASE_URL = 'http://localhost:8000';
     var PATH_URL = '/nutrient-service/api/nutrients/categories?=';
+
+    axios.defaults.headers.common['Authorization'] = `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1IiwiaWF0IjoxNjg1MjYzNzE4LCJleHAiOjE2ODUyNjczMTh9.iMSZPeYvkEWkcK6kvU49udb14tBivOlAYHYAdgtfkLtvZMyY-rHY3Vuk_sXgSEZYvfijDpwnpG0zx0LI-amTJw`
+    axios.defaults.withCredentials = true;
+    console.log(BASE_URL + PATH_URL + typeString);
     axios.get(BASE_URL + PATH_URL + typeString)
         .then(response => {
             console.log("RESPONSE : " + response);

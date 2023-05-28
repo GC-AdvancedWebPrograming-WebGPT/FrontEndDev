@@ -49,7 +49,9 @@ const targetLists = ({ typeString }) => {
 
     var BASE_URL = 'http://localhost:8000';
     var PATH_URL = '/nutrient-service/api/nutrients/conditions?=';
-    axios.get(BASE_URL + PATH_URL + typeString)
+    axios.defaults.withCredentials = true;
+
+    axios.get(BASE_URL + PATH_URL + typeString, { headers: { "Authorization" : `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0IiwiaWF0IjoxNjg1MjA1MzI1LCJleHAiOjE2ODUyMDg5MjV9.xHNJwLzoUJ5LHtubQ-dHJ4OpNXlAG_BiJrlqdGz9NFJhQyrSqdPXSzIKy4rBJxyky2w1t7V1j57Iw-w80EAvmA`}})
         .then(response => {
             console.log("RESPONSE : " + response);
             return response.data;

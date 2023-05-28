@@ -1,4 +1,4 @@
-export default [
+const Datas = [
     {
         id : 0,
         title : "고려은단 멀티비타민 올인원",
@@ -72,8 +72,8 @@ export default [
     {
         id : 7,
         title : "덴프스 덴마크 유산균 이야기",
-        content : " - ",
-        usage : " - ",
+        content : " 세계 특허받은 LGG 유산균 ",
+        usage : " 1일 1회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://brand.naver.com/denps/products/4786014390?NaPm=ct%3Dlg0nqeyg%7Cci%3Dbdb86c3060ae323a9ba3bbcc2c7d1f10dbcca5f4%7Ctr%3Dslcf%7Csn%3D397098%7Chk%3Dcb91a4f49a71b9bec8024c9e25081150daf5d4ba"
@@ -82,8 +82,8 @@ export default [
     {
         id : 8,
         title : "GNM 자연의 품격 100억 프로바이오틱스",
-        content : " - ",
-        usage : " - ",
+        content : " 살아있는 17종 유산균을 1캡슐에! ",
+        usage : " 1일 1회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://shopping.naver.com/window-products/healthy/5174410693?NaPm=ct%3Dlg0nq3ds%7Cci%3D2eaeffde321572475b55ec0dcfe375908472a842%7Ctr%3Dslcf%7Csn%3D202062%7Chk%3D422a25b625bd079dda415c5b34b80e60b069ab6f"
@@ -92,8 +92,8 @@ export default [
     {
         id : 9,
         title : "다이어트 유산균 비에날씬",
-        content : " - ",
-        usage : " - ",
+        content : " 유산균 섭취와 체중 감소의 효과를 한 번에! ",
+        usage : " 1일 1회, 1회 2정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://brand.naver.com/bnrmall/products/4411276919?NaPm=ct%3Dlg0noklk%7Cci%3Da5ed4049e1cefc045ab318d599cd6c7bd2a7eef3%7Ctr%3Dslcf%7Csn%3D906722%7Chk%3Db5b80a57a1359edd2befb0bae82475dc19ab9034"
@@ -102,8 +102,8 @@ export default [
     {
         id : 10,
         title : "해나우푸드 실리마린 밀크씨슬",
-        content : " - ",
-        usage : " - ",
+        content : " 피로회복과 간 건강을 한 번에 관리해요 ",
+        usage : " 1일 1~3회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://search.shopping.naver.com/catalog/21515439233?query=%EB%B0%80%ED%81%AC%EC%94%A8%EC%8A%AC&NaPm=ct%3Dlg0nunqg%7Cci%3D26413d48fa700d8e3aa19fadf67d15acb3c937a8%7Ctr%3Dslsl%7Csn%3D95694%7Chk%3D1df738c890013d50da22325dc957388e192009a6"
@@ -112,8 +112,8 @@ export default [
     {
         id : 11,
         title : "락티브 간에 좋은 유기농 밀크씨슬 실리마린 500mg x 60정",
-        content : " - ",
-        usage : " - ",
+        content : " 유기농 원료만을 사용했어요 ",
+        usage : " 1일 1회, 1회 2정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://brand.naver.com/lactiv/products/6019229792?NaPm=ct%3Dlg0nyfjc%7Cci%3Dee114f09da68376f407472f7eaa92da71fb463fa%7Ctr%3Dslcf%7Csn%3D2528238%7Chk%3Da0b2e6198d5ae11c78d67fa397bcfe3a907f7344"
@@ -122,8 +122,8 @@ export default [
     {
         id : 12,
         title : "뉴트리코어 유기농 밀크씨슬 1000mg x 30정",
-        content : " - ",
-        usage : " - ",
+        content : " 쉽게 지치고 간이 피곤하다면, 더 늦기전에 ",
+        usage : " 1일 1회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://brand.naver.com/nutricore/products/2019954468?NaPm=ct%3Dlg0nzi48%7Cci%3D7f926d3bb8f8921f055cfe76f027c38e6e3d55c1%7Ctr%3Dslcf%7Csn%3D358231%7Chk%3Dd8d9f841aedc3d2fe467f643b456948e294afd7b"
@@ -132,8 +132,8 @@ export default [
     {
         id : 13,
         title : "고려은단 퓨어 밀크씨슬 500mg x 60캡슐",
-        content : " - ",
-        usage : " - ",
+        content : " 간을 위한 활력 에너지 ",
+        usage : " 1일 1회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://brand.naver.com/koreaeundanhc/products/5152846746?NaPm=ct%3Dlg0nzw08%7Cci%3D328c7cb072baace88b8e973a0108b2feff1309b1%7Ctr%3Dslcf%7Csn%3D1444796%7Chk%3Ddb38b9b24ad5c2aaec7ac57446174acde5c193d1"
@@ -142,8 +142,8 @@ export default [
     {
         id : 14,
         title : "대웅제약 에너씨슬 콜레다운 850mg x 30캡슐",
-        content : " - ",
-        usage : " - ",
+        content : " 간을 위한 활력 에너지 ",
+        usage : " 1일 1회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://brand.naver.com/dwmall/products/4844301061?NaPm=ct%3Dlg0o0czc%7Cci%3Dc4c5ff2ac2c102b8a96266e47f1280fc1511a6b7%7Ctr%3Dslbrc%7Csn%3D1079418%7Chk%3Da12ea499850a884d53a870764ba2fc1578002421"
@@ -152,8 +152,8 @@ export default [
     {
         id : 15,
         title : "루테인 지아잔틴 미니",
-        content : " - ",
-        usage : " - ",
+        content : " 초소형 식물성 캡슐에 담아 눈 건강 집중 관리 ",
+        usage : " 1일 1회, 1회 1정 복용 ",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "https://www.shopagh.com/goods/goods_view.php?goodsNo=1000000548&mtn=109%5E%7C%5E전제품보기_건강고민별%5E%7C%5Ey"
@@ -182,7 +182,7 @@ export default [
     {
         id : 18,
         title : "식물성 알티지 오메가3",
-        content : " - ",
+        content : " 혈행건강은 기본, 기억력 개선까지 한번에! ",
         usage : "1일 1회, 1회 2캡슐",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
@@ -212,7 +212,7 @@ export default [
     {
         id : 21,
         title : "칼슘앤 마그네슘 비타민D",
-        content : " - ",
+        content : " 칼슘, 마그네슘, 아연까지 ",
         usage : "1일 1회, 1회 2정",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
@@ -222,7 +222,7 @@ export default [
     {
         id : 22,
         title : "칼슘마그네슘디",
-        content : " - ",
+        content : " 체내 칼슘흡수 촉진 및 골다공증 예방 ",
         usage : "1일 1회, 1회 3정",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
@@ -232,7 +232,7 @@ export default [
     {
         id : 23,
         title : "국민 칼마디",
-        content : " - ",
+        content : " 체내 칼슘흡수 촉진 및 골다공증 예방 ",
         usage : "1일 1회, 1회 2정",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
@@ -242,10 +242,11 @@ export default [
     {
         id : 24,
         title : "칼슘마그네슘비타민D+",
-        content : " - ",
+        content : " 체내 칼슘흡수 촉진 및 골다공증 예방 ",
         usage : "1일 1회, 1회 2정",
         product : "제품 어쩌구",
         ingredient : "성분 어쩌구",
         buyurl : "http://dradol.com/product/detail.html?product_no=28&cate_no=48&display_group=1"
     }
 ]
+export default Datas;

@@ -130,7 +130,7 @@ function MyPage(){
 
     const [user, setUSer] = useState("로그인을 해주세요");
     const [image, setImage] = useState("");
-    const [myList, setMyList] = useState([]);
+    const [myList, setMyList] = useState({});
 
     useEffect(() => {
         axios.get('http://localhost:3000/user-service/api/users/me',
@@ -164,10 +164,10 @@ function MyPage(){
 
             </InfoContainer>
             <NutrientsContainer>
-                {myList.map((userNutrients) => (
-                        <div key={userNutrients.nutrientId}>
-                            <div>{userNutrients.title}</div>
-                            <img src={userNutrients.imageUrl} alt={userNutrients.title} />
+                {myList.map((it) => (
+                        <div key={it.nutrientId}>
+                            <div>{it.title}</div>
+                            <img src={it.imageUrl} alt={it.title} />
                         </div>
                     ))}
             </NutrientsContainer>

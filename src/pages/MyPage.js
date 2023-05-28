@@ -123,17 +123,17 @@ const BoldText = styled.text`
     text-align: center;
 `;
 
-const accessToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNjg1MTk1NzI3LCJleHAiOjE2ODUxOTkzMjd9.31oFMyX7g34cXGEhvunXxAjHyoTZ8ie1hnSQILwOug2GaRjwkbtPaReMZO_WobNEZIzxurv2oq1Lo_jyzfiaIg";
+const accessToken = localStorage.accessToken
 
 
 function MyPage(){
 
-    const [user, setUSer] = useState("");
+    const [user, setUSer] = useState("로그인을 해주세요");
     const [image, setImage] = useState("");
     const [myList, setMyList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/user-service/api/users/me',
+        axios.get('http://localhost:3000/user-service/api/users/me',
         { headers: { "Authorization" : `Bearer ${accessToken}`}}
         ).then((res) => {
             console.log(res);
@@ -164,12 +164,12 @@ function MyPage(){
 
             </InfoContainer>
             <NutrientsContainer>
-                {/* {myList.map((nutrient) => (
-                        <div key={nutrient.nutrientId}>
-                            <div>{nutrient.title}</div>
-                            <img src={nutrient.imageUrl} alt={nutrient.title} />
+                {myList.map((userNutrients) => (
+                        <div key={userNutrients.nutrientId}>
+                            <div>{userNutrients.title}</div>
+                            <img src={userNutrients.imageUrl} alt={userNutrients.title} />
                         </div>
-                    ))} */}
+                    ))}
             </NutrientsContainer>
 	 </Container>
         </Wrapper>

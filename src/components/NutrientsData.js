@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NutrientsInfo from "./NutrientsInfo";
 import styled from "styled-components";
 import axios from "axios";
@@ -139,36 +139,18 @@ const PName = styled.p`
     ];
 */
 
-const targetLists = ({ typeString }) => {
-    const empty = [
-        {nutrientId:1, imageUrl:"", title:"검색 결과를 찾지 못했습니다"}
-    ];
-
-
-    var BASE_URL = 'http://localhost:8000';
-    var PATH_URL = '/nutrient-service/api/nutrients/categories?=';
-    var token = "111";
-    axios.defaults.withCredentials = true;
-    axios.get(BASE_URL + PATH_URL + typeString, { headers: { "Authorization" : `Bearer ${token}`}})
-        .then(response => {
-            console.log("RESPONSE : " + response);
-            return response.data;
-        })
-        .catch(error => {
-            console.log("ERROR : " + error.message);
-            return empty;
-        });
-}
-
 const NutrientItem = ({ dat }) => (
     <Box>
         <NutrientsInfo toLink={`/detail/${dat.nutrientId}`} imgSrc={dat.imageUrl} itemName={dat.title} itemCompany="자세히 보기" />
     </Box>
 );
 
+const accessToken = localStorage.accessToken
+
 const NutrientsData = ({ type }) => {
-    var targetData, h1Cont, pCont;
+    var h1Cont, pCont;
     var typeString = null;
+
     if (type === "1") {
         typeString = "fatigue";
         h1Cont = "피로/활력";
@@ -202,9 +184,17 @@ const NutrientsData = ({ type }) => {
         h1Cont = "올바른 카테고리가 아닙니다";
         pCont = "상단바에서 다른 카테고리를 찾아보세요"
     }
-    
-    targetData = targetLists({typeString});
-    console.log(targetData);
+
+    const [nutList, setNutList] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/nutrient-service/api/nutrients/categories?=' + typeString,
+        { headers: { "Authorization" : `Bearer ${accessToken}`}}, { withCredentials: true }
+        ).then((res) => {
+            console.log(res);
+            setNutList(res.data.nutrients)
+        })
+    });
 
     // targetData 부분이 실제 데이터셋 내용임
     return(
@@ -212,7 +202,7 @@ const NutrientsData = ({ type }) => {
             <HeadName>{h1Cont}</HeadName>
             <PName>{pCont}</PName>
             <Grid>
-                {targetData.map((ndata) => (<NutrientItem dat={ndata} />))}
+                {nutList.map((ndata) => (<NutrientItem dat={ndata} />))}
             </Grid>
         </Wrapper>
     );

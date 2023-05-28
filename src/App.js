@@ -8,6 +8,8 @@ import Detail from "./pages/Detail";
 import data from "./data.js"
 import Login from "./pages/Login";
 
+localStorage.accessToken = ``
+
 function App() {
   const [nutrients] = useState(data);
   return (

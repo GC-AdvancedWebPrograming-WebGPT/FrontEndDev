@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import axios from "axios";
 import NutrientsInfo2 from "./NutrientsInfo2";
@@ -42,32 +42,13 @@ const PName = styled.p`
     margin-left: 4%;
 `
 
-const targetLists = ({ typeString }) => {
-    const empty = [
-        {nutrientId:1, imageUrl:"", title:"검색 결과를 찾지 못했습니다"}
-    ];
-
-    var BASE_URL = 'http://localhost:8000';
-    var PATH_URL = '/nutrient-service/api/nutrients/conditions?=';
-    var token = "111";
-    axios.defaults.withCredentials = true;
-    axios.get(BASE_URL + PATH_URL + typeString, { headers: { "Authorization" : `Bearer ${token}`}})
-        .then(response => {
-            console.log("RESPONSE : " + response);
-            return response.data;
-        })
-        .catch(error => {
-            console.log("ERROR : " + error.message);
-            return empty;
-        });
-}
-
 const NutrientItem = ({ dat }) => (
     <Box>
         <NutrientsInfo2 toLink={`/detail/${dat.nutrientId}`} imgSrc={dat.imageUrl} itemName={dat.title} itemCompany="자세히 보기" />
     </Box>
 );
 
+const accessToken = localStorage.accessToken
 
 const NutrientsData2 = ({ type }) => {
     var targetData, h1Cont, pCont;
@@ -101,9 +82,17 @@ const NutrientsData2 = ({ type }) => {
         h1Cont = "올바른 카테고리가 아닙니다";
         pCont = "상단바에서 다른 카테고리를 찾아보세요"
     }
-    
-    targetData = targetLists({typeString});
-    console.log(targetData);
+
+    const [nutList2, setNutList2] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/nutrient-service/api/nutrients/conditions?=' + typeString,
+        { headers: { "Authorization" : `Bearer ${accessToken}`}}, { withCredentials: true }
+        ).then((res) => {
+            console.log(res);
+            setNutList2(res.data.nutrients)
+        })
+    });
 
     // targetData 부분이 실제 데이터셋 내용임
     return(
@@ -111,7 +100,7 @@ const NutrientsData2 = ({ type }) => {
             <HeadName>{h1Cont}</HeadName>
             <PName>{pCont}</PName>
             <Grid>
-                {targetData.map((ndata) => (<NutrientItem dat={ndata} />))}
+                {nutList2.map((ndata) => (<NutrientItem dat={ndata} />))}
             </Grid>
         </Wrapper>
     );
